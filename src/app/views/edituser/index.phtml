@@ -1,0 +1,25 @@
+<?php echo $this->tag->form("edituser/edituser/".$id);
+// print_r($orderid);
+// die;
+
+?>
+
+
+<h2>Edit Details</h2>
+    <p>
+        <label for="name">Name:</label>
+        <?php echo $this->tag->textField('name'); ?> 
+        <label for="email">Email:</label>
+        <?php echo $this->tag->textField('email'); ?> 
+        <label for="password">Password:</label>
+        <?php echo $this->tag->passwordField('password'); ?> 
+    </p>
+    <p>
+       
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton("submit"); ?>
+    </p>
+
+</form>

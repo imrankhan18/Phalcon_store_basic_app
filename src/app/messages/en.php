@@ -1,0 +1,27 @@
+<?php
+$messages = [
+    'Product List' => 'Product List',
+    'List' => 'List',
+    'Add Product!' => 'Add Product !',
+    'Add Order' => 'Add Order !',
+    'Show Order !' => 'Show Order !',
+    'Settings !' => 'Settings !',
+    'Product ID' => 'Product ID',
+    'Name' => 'Name',
+    'Description' => 'Description',
+    'Tags' => 'Tags',
+    'Price' => 'Price',
+    'Stock' => 'Stock',
+    'Action' => 'Action',
+    'Total Products : ' => 'Total Products :',
+    'Select Language '=> 'Select Language',
+    'Show Product !' =>  'Show Product',
+    'ID'=>'ID',
+    'Email'=>'Email',
+    'Password'=>'Password',
+    'Users quantity'=>'Users quantity',
+    'Sign Up Here!'=>'Sign Up Here!',
+    'Login Here!'=>'Login Here!',
+    'Go To Dashboard'=>'Go To Dashboard',
+    'Logout'=>'Logout'
+];

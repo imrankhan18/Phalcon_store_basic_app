@@ -1,0 +1,29 @@
+<?php echo $this->tag->form("edit/edit/".$orderid);
+// print_r($orderid);
+// die;
+
+?>
+
+
+<h2>Edit Details</h2>
+    <p>
+        <label for="name">Name:</label>
+        <?php echo $this->tag->textField('name'); ?> 
+        <label for="address">Address:</label>
+        <?php echo $this->tag->textField('address'); ?> 
+        <label for="zipcode">Zipcode:</label>
+        <?php echo $this->tag->textField('zipcode'); ?> 
+        <label for="quantity">Quantity:</label>
+        <?php echo $this->tag->textField('quantity'); ?>
+        <label for="productname">Product Name:</label>
+        <?php echo $this->tag->textField('productname'); ?>
+    </p>
+    <p>
+       
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton("submit"); ?>
+    </p>
+
+</form>

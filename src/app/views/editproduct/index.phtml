@@ -1,0 +1,26 @@
+<?php echo $this->tag->form("editproduct/editproduct/".$productid);
+// print_r($userid);
+
+?>
+
+
+<h2>Edit Product Details</h2>
+    <p>
+        <label for="name"><strong>Product Name:</strong></label>
+        <?php echo $this->tag->textField('productname'); ?> 
+        <label for="quantity"><strong>Qauntity:</strong></label>
+        <?php echo $this->tag->textField('quantity'); ?>
+        <label for="description"><strong> Description</strong></label>
+        <?php echo $this->tag->textArea('description'); ?>
+        <label for="price"><strong>Price</strong></label>
+        <?php echo $this->tag->textfield('price'); ?>
+    </p>
+    <p>
+       
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton(['class' => 'btn btn-dark', 'Update']); ?>
+    </p>
+
+</form>

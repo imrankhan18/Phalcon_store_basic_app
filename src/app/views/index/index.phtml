@@ -1,0 +1,91 @@
+<form action="" method="get">
+<div for="drop dwon" style="margin-top:50px;">
+<lable for="role"><b><?php echo $this->locale->_('Select Language') ?></b></label>   
+<select name="locale" onchange="this.form.submit()">
+<option value="sl" name="sl">Select</option>
+<option value="en" name="en">English</option>
+<option value="hn" name="hn">Hindi</option>
+<option value="fr" name="fr">French</option>
+<option value="ur" name="ur">Urdu</option>
+<input type="hidden" name="bearer" value="<?php echo $_GET['bearer']?>">
+</select>
+</div>
+</form>
+<?php
+
+echo "<h1 style='text-align:center;'>". $this->locale->_('List')."</h1>";
+
+echo PHP_EOL;
+
+echo $this->tag->linkTo([
+    'signup',
+    $this->locale->_('Sign Up Here!' ), 'class' => 'btn btn-primary' ]);
+if($this->cookies->has('remember-me')){
+   echo $this->tag->linkTo([
+    'index',
+    $this->locale->_('Login Here!'), 'class' => 'btn btn-primary' ]); 
+}else{
+    echo $this->tag->linkTo([
+        'login',
+        $this->locale->_('Login Here!') , 'class' => 'btn btn-primary' ]);
+}
+
+    echo $this->tag->linkTo([
+        'dashboard',
+        $this->locale->_('Go To Dashboard'), 'class' => 'btn btn-primary' ]);
+        echo $this->tag->linkTo([
+            'index/logout',
+            $this->locale->_('Logout'), 'class' => 'btn btn-danger' ]);
+if($this->cookies->has('remember-me'))
+{
+    if ($users->count() > 0) {
+        ?>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th><?php echo $this->locale->_('ID')?></th>
+                <th><?php echo $this->locale->_('Name')?></th>
+                <th><?php echo $this->locale->_('Email')?></th>
+                <th><?php echo $this->locale->_('Password')?></th>
+                <th><?php echo $this->locale->_('Action')?></th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="3"><?php echo $this->locale->_('Users quantity')?>:<?php echo $users->count(); ?></td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <?php foreach ($users as $user) { ?>
+                <tr>
+                    <td><?php echo $user->id; ?></td>
+                    <td><?php echo $user->name; ?></td>
+                    <td><?php echo $user->email; ?></td>
+                    <td><?php echo $user->password; ?></td>
+                    <td><?php echo $this->tag->linkTo([
+                            'edituser/index/'.$user->id,
+                            'Edit', 'class' => 'btn btn-primary' ]);?>
+                    <?php echo $this->tag->linkTo([
+                            'index/delete/'.$user->id,
+                            'Delete', 'class' => 'btn btn-danger' ]);?></td>
+
+                </tr>
+            <?php
+}         ?>
+            </tbody>
+        </table>
+        <?php
+    }
+}
+echo $this->tag->linkTo([
+    'order',
+    $this->locale->_('Add Order !' ), 'class' => 'btn btn-dark' ]);
+echo $this->tag->linkTo([
+        'order/showorder',
+        $this->locale->_('Show Order !' ), 'class' => 'btn btn-dark' ]);
+echo $this->tag->linkTo([
+            'products',
+            $this->locale->_('Add Product !' ), 'class' => 'btn btn-dark' ]);
+echo $this->tag->linkTo([
+                'products/display',
+                $this->locale->_('Show Product !' ), 'class' => 'btn btn-dark' ]);
